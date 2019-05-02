@@ -10,7 +10,7 @@ public class Main {
 	private static final int width = 900;
 	private static final int height = 600;
 	private static double sampler = 10;
-	protected static Image image = null;
+	public static Image image = null;
 	private static CObscura obscura = null;
 	private static Ball ball = null;
 	private static Vec3 color, background, shade = null;

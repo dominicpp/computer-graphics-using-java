@@ -1,21 +1,21 @@
-package engel865650.a03;
+package engel865650.a04;
 
-import cgtools.Random;
 import cgtools.Vec3;
+import engel865650.a03.Hit;
+import engel865650.a03.Ray;
 
-public class Ball {
+public class Globe implements Shape {
 
 	private Vec3 position, ballColor = null;
-	private double radius, colorGradientX, colorGradientY = 0;
+	private double radius = 0;
 
-	private int sampling = 10;
-
-	public Ball(Vec3 p, double r, Vec3 bc) {
+	public Globe(Vec3 p, double r, Vec3 c) {
 		this.position = p;
 		this.radius = r;
-		this.ballColor = bc;
+		this.ballColor = c;
 	}
 
+	@Override
 	public Hit intersect(Ray r) {
 		Vec3 new_position = Vec3.subtract(r.getOrigin(), position);
 
@@ -40,7 +40,7 @@ public class Ball {
 			t = t2;
 
 			if (t > r.getTmin() && t < r.getTmax()) {
-				Vec3 point = r.pointAt(t1);
+				Vec3 point = r.pointAt(t);
 				Vec3 normVec = Vec3.divide(Vec3.subtract(point, position), radius);
 				return new Hit(t, point, normVec, ballColor);
 			}
@@ -48,18 +48,18 @@ public class Ball {
 
 		if (discriminant > 0) {
 			// pq
-			double t1 = (-(b + Math.sqrt(discriminant))) / (2 * a);
-			double t2 = (-(b - Math.sqrt(discriminant))) / (2 * a);
+			double t1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+			double t2 = (-b - Math.sqrt(discriminant)) / (2 * a);
 
 			if (t1 < t2) {
 				t = t1;
+			} else {
+				t = t2;
 			}
-			t = t2;
-
 			if (t > r.getTmin() && t < r.getTmax()) {
 				Vec3 point = r.pointAt(t);
-				Vec3 normVec = Vec3.divide(Vec3.subtract(point, position), radius);
-				return new Hit(t, point, normVec, ballColor);
+				Vec3 normV = Vec3.divide(Vec3.subtract(point, position), radius);
+				return new Hit(t, point, normV, ballColor);
 			}
 		}
 		return null;
@@ -70,27 +70,6 @@ public class Ball {
 		Vec3 ambient = Vec3.multiply(0.1, color);
 		Vec3 diffuse = Vec3.multiply(0.9 * Double.max(0, Vec3.dotProduct(lightDir, normal)), color);
 		return Vec3.add(ambient, diffuse);
-	}
-
-	public Vec3 pixelColor(double x, double y) {
-		// background color
-		colorGradientX = ((double) x / 8) / Main.image.getWidth();
-		colorGradientY = ((double) y / 5) / Main.image.getHeight();
-		return new Vec3(2.3 * colorGradientX, 7.3 * colorGradientX, 4.3 * colorGradientY);
-	}
-
-	public Vec3 stratified_Sampling(double x, double y) {
-		Vec3 isResult = pixelColor(x, y);
-		for (int xi = 0; xi < sampling; xi++) {
-			for (int yi = 0; yi < sampling; yi++) {
-				double rx = Random.random();
-				double ry = Random.random();
-				double xs = x + (xi + rx) / sampling;
-				double ys = y + (yi + ry) / sampling;
-				isResult = Vec3.add(isResult, pixelColor(xs, ys));
-			}
-		}
-		return Vec3.divide(isResult, sampling * sampling);
 	}
 
 }
