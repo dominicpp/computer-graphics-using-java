@@ -132,20 +132,21 @@ public class Main {
 		obscura = new CObscura(Math.PI / 3, image.getWidth(), image.getHeight());
 		//
 		Plane plane = new Plane(new Vec3(0.0, -1.0, 0.0), new Vec3(0.0, 1.8, 0.0),
-				new PolishedMetalMaterial(new Vec3(Random.random(), Random.random(), Random.random()), 0.05));
+				new PolishedMetalMaterial(Vec3.gray, 0.0));
 		//
 		Background background = new Background(new BackgroundMaterial());
 		//
-		Shape blueGlobe = new Globe(new Vec3(1.5, -0.4, -3.3), 0.5, new DiffuseMaterial(Vec3.blue));
+		Shape blueGlobe = new Globe(new Vec3(1.8, -0.3, -3.3), 0.5, new DiffuseMaterial(Vec3.blue));
 		Shape greenGlobe = new Globe(new Vec3(-1.9, -0.8, -3.3), 0.5, new DiffuseMaterial(Vec3.green));
-		Shape redGlobe = new Globe(new Vec3(0.0, 0.5, -2.5), 0.4, new DiffuseMaterial(Vec3.red));
 		//
-		Shape glassGlobe = new Globe(new Vec3(-0.4, -0.5, -3.5), 0.5, new GlassMaterial(4.0));
+		Shape glassGlobe = new Globe(new Vec3(-0.9, -0.1, -2.3), 0.4, new GlassMaterial(2.0));
+		Shape glass = new Globe(new Vec3(0.3, 0.0, -2.5), 0.35, new GlassMaterial(1.0));
 		//
 		Shape yellowGlobe = new Globe(new Vec3(0.0, 0.0, 0.4), 1.1, new DiffuseMaterial(new Vec3(1, 1, 0)));
 		//
 		Shape glassGlobeCenter = new Globe(new Vec3(1.4, 0.7, -3.5), 0.5, new PolishedMetalMaterial(Vec3.gray, 0.0));
-		Shape glassGlobeCenter2 = new Globe(new Vec3(-1.4, 0.7, -3.5), 0.5, new PolishedMetalMaterial());
+		Shape glassGlobeCenter2 = new Globe(new Vec3(-1.4, 0.7, -5.0), 0.8,
+				new PolishedMetalMaterial(new Vec3(Random.random(), Random.random(), Random.random()), 0.0));
 		//
 		Shape polishedGlobe = new Globe(new Vec3(0.5, -0.8, -2.5), 0.2, new PolishedMetalMaterial(Vec3.white, 1.5));
 		//
@@ -157,17 +158,17 @@ public class Main {
 		//
 		shapes.add(blueGlobe);
 		shapes.add(greenGlobe);
-		shapes.add(redGlobe);
 		shapes.add(yellowGlobe);
 		//
 		shapes.add(glassGlobe);
+		shapes.add(glass);
 		shapes.add(glassGlobeCenter);
 		shapes.add(glassGlobeCenter2);
 		//
 		shapes.add(polishedGlobe);
 		//
 		Group group = new Group(shapes);
-		raytrace2(obscura, group, 10);
+		raytrace2(obscura, group, 1);
 	}
 
 	public static Image raytrace2(CObscura obscura, Group group, double sampler) {
@@ -181,7 +182,7 @@ public class Main {
 						double xs = x + (xi + rx) / sampler;
 						double ys = y + (yi + ry) / sampler;
 						Ray currentRay = obscura.generate(xs, ys);
-						shade = calculateRadiance(group, currentRay, 3.5);
+						shade = calculateRadiance(group, currentRay, 3.8);
 						background = Vec3.divide(shade, sampler * sampler);
 						color = Vec3.add(color, background);
 					}
