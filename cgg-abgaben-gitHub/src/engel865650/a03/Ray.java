@@ -36,4 +36,12 @@ public class Ray {
 	public Vec3 pointAt(double t) {
 		return Vec3.add(origin, Vec3.multiply(t, direction));
 	}
+	
+	public boolean contains(double t) {
+		if(t > tmin && t < tmax) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 }
