@@ -22,7 +22,7 @@ public class Main {
 	static Material material;
 
 	public static void main(String[] args) {
-		a06_mirrors_glass_1();
+		// a06_mirrors_glass_1();
 		a06_mirrors_glass_2();
 	}
 
@@ -168,7 +168,7 @@ public class Main {
 		shapes.add(polishedGlobe);
 		//
 		Group group = new Group(shapes);
-		raytrace2(obscura, group, 1);
+		raytrace2(obscura, group, 10);
 	}
 
 	public static Image raytrace2(CObscura obscura, Group group, double sampler) {
