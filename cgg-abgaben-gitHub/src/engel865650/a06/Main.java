@@ -22,8 +22,9 @@ public class Main {
 	static Material material;
 
 	public static void main(String[] args) {
-		// a06_mirrors_glass_1();
-		a06_mirrors_glass_2();
+
+		a06_mirrors_glass_1();
+		// a06_mirrors_glass_2();
 	}
 
 	public static void a06_mirrors_glass_1() {
@@ -35,36 +36,35 @@ public class Main {
 		//
 		Background background = new Background(new BackgroundMaterial());
 		//
-		Shape glassGlobeCenter = new Globe(new Vec3(0.0, -0.4, -3.3), 0.5, new PolishedMetalMaterial());
+		Shape glassGlobeCenter = new Globe(new Vec3(0.4, -0.75, -2.2), 0.25, new PolishedMetalMaterial());
 		//
-		Shape glass1 = new Globe(new Vec3(0.7, -0.4, -1.5), 0.2, new GlassMaterial(1.0));
-		Shape glass2 = new Globe(new Vec3(0.0, 0.30, -1.4), 0.2, new GlassMaterial(1.0));
-		Shape glass3 = new Globe(new Vec3(-0.7, -0.4, -1.5), 0.2, new GlassMaterial(1.0));
+		Shape glass1 = new Globe(new Vec3(1.2, -0.3, -1.5), 0.2, new GlassMaterial(1.0));
+		Shape glass3 = new Globe(new Vec3(-1.2, -0.3, -1.5), 0.2, new GlassMaterial(1.0));
 		//
-		Shape blueGlobe = new Globe(new Vec3(1.3, -0.6, -3.3), 0.5, new DiffuseMaterial(Vec3.blue));
-		Shape greenGlobe = new Globe(new Vec3(-1.3, -0.6, -3.3), 0.5, new DiffuseMaterial(Vec3.green));
-		Shape redGlobe = new Globe(new Vec3(0.0, 0.5, -1.5), 0.25, new DiffuseMaterial(Vec3.red));
+		Shape blueGlobe = new Globe(new Vec3(0.9, -0.6, -7.0), 1.2, new DiffuseMaterial(Vec3.blue));
+		Shape greenGlobe = new Globe(new Vec3(-1.2, -0.6, -5.0), 0.9, new DiffuseMaterial(Vec3.green));
+		Shape redGlobe = new Globe(new Vec3(-0.4, 1.0, -7.2), 0.8, new DiffuseMaterial(Vec3.red));
 		//
 		Shape yellowGlobe = new Globe(new Vec3(0.0, 0.0, 0.4), 1.1, new DiffuseMaterial(new Vec3(1, 1, 0)));
 		Shape orangeGlobe = new Globe(new Vec3(0.0, 5.0, 8.5), 3.0, new DiffuseMaterial(new Vec3(1.9, 0.75, 0.2)));
 		//
-		Shape colorReflectedGreen = new Globe(new Vec3(-1.65, -0.8, -2.0), 0.2,
+		Shape colorReflectedGreen = new Globe(new Vec3(-1.6, -0.8, -2.3), 0.25,
 				new PolishedMetalMaterial(new Vec3(0, 2, 0.5), 0.0));
-		Shape colorReflectedPink = new Globe(new Vec3(1.65, -0.8, -2.0), 0.2,
+		Shape colorReflectedPink = new Globe(new Vec3(1.6, -0.8, -2.3), 0.25,
 				new PolishedMetalMaterial(new Vec3(2, 0, 1), 0.0));
 		//
-		Shape grayGlobeLeft = new Globe(new Vec3(-1.3, 0.7, -2.3), 0.3, new PolishedMetalMaterial(Vec3.gray, 0.0));
-		Shape grayGlobeRight = new Globe(new Vec3(1.3, 0.7, -2.3), 0.3, new PolishedMetalMaterial(Vec3.gray, 0.0));
+		Shape grayGlobeLeft = new Globe(new Vec3(-1.6, 0.8, -2.0), 0.5,
+				new PolishedMetalMaterial(new Vec3(0.8, 0.8, 0.8), 0.0));
+		Shape grayGlobeRight = new Globe(new Vec3(1.6, 0.8, -2.0), 0.5,
+				new PolishedMetalMaterial(new Vec3(0.8, 0.8, 0.8), 0.0));
 		//
-		Shape polishedGlobeLeft = new Globe(new Vec3(-0.8, 0.2, -2.5), 0.2, new PolishedMetalMaterial(Vec3.gray, 2.5));
-		Shape polishedGlobeRight = new Globe(new Vec3(0.8, 0.2, -2.5), 0.2,
-				new PolishedMetalMaterial(Vec3.reflection, 1.5));
+		Shape polishedGlobeLeft = new Globe(new Vec3(-1.2, -0.8, -2.5), 0.2,
+				new PolishedMetalMaterial(Vec3.reflection, 0.1));
+		Shape polishedGlobeRight = new Globe(new Vec3(1.2, -0.8, -2.5), 0.2,
+				new PolishedMetalMaterial(Vec3.reflection, 0.3));
 		//
-		Shape glassGlobeLeft = new Globe(new Vec3(-4.1, -0.6, -5.2), 0.7, new GlassMaterial(2.3));
-		Shape glassGlobeRight = new Globe(new Vec3(4.1, -0.6, -5.2), 0.7, new GlassMaterial(1.8));
-		//
-		Shape glassGlobeCenterLeft = new Globe(new Vec3(-0.3, -0.8, -2.0), 0.25, new GlassMaterial(4.0));
-		Shape glassGlobeCenterRight = new Globe(new Vec3(0.3, -0.8, -2.0), 0.25, new GlassMaterial(4.0));
+		Shape glassGlobeCenterLeft = new Globe(new Vec3(-0.2, -0.5, -2.8), 0.35, new GlassMaterial(1.5));
+		Shape glassGlobeCenterRight = new Globe(new Vec3(1.4, -0.6, -4.5), 0.4, new GlassMaterial(1.3));
 		//
 		List<Shape> shapes = new ArrayList<Shape>();
 		//
@@ -75,7 +75,6 @@ public class Main {
 		shapes.add(glassGlobeCenter);
 		//
 		shapes.add(glass1);
-		shapes.add(glass2);
 		shapes.add(glass3);
 		//
 		shapes.add(blueGlobe);
@@ -93,9 +92,6 @@ public class Main {
 		//
 		shapes.add(polishedGlobeLeft);
 		shapes.add(polishedGlobeRight);
-		//
-		shapes.add(glassGlobeLeft);
-		shapes.add(glassGlobeRight);
 		//
 		shapes.add(glassGlobeCenterLeft);
 		shapes.add(glassGlobeCenterRight);
@@ -115,7 +111,7 @@ public class Main {
 						double xs = x + (xi + rx) / sampler;
 						double ys = y + (yi + ry) / sampler;
 						Ray currentRay = obscura.generate(xs, ys);
-						shade = calculateRadiance(group, currentRay, 3.5);
+						shade = calculateRadiance(group, currentRay, 3.8);
 						background = Vec3.divide(shade, sampler * sampler);
 						color = Vec3.add(color, background);
 					}
@@ -136,19 +132,20 @@ public class Main {
 		//
 		Background background = new Background(new BackgroundMaterial());
 		//
-		Shape blueGlobe = new Globe(new Vec3(1.8, -0.3, -3.3), 0.5, new DiffuseMaterial(Vec3.blue));
-		Shape greenGlobe = new Globe(new Vec3(-1.9, -0.8, -3.3), 0.5, new DiffuseMaterial(Vec3.green));
+		Shape glassGlobe = new Globe(new Vec3(0.0, 0.2, -5.0), 0.7, new GlassMaterial(1.3));
+		Shape glassGlobe2 = new Globe(new Vec3(-2.0, 0.0, -4.8), 0.7, new GlassMaterial(1.5));
+		Shape glassGlobe3 = new Globe(new Vec3(2.0, 0.0, -4.8), 0.7, new GlassMaterial(1.5));
+		Shape glassGlobe4 = new Globe(new Vec3(-3.5, -0.3, -4.5), 0.7, new PolishedMetalMaterial(Vec3.green, 0.0));
+		Shape glassGlobe5 = new Globe(new Vec3(3.5, -0.3, -4.5), 0.7, new PolishedMetalMaterial(Vec3.red, 0.0));
+		Shape glassGlobe6 = new Globe(new Vec3(-0.7, -0.6, -3.5), 0.4, new PolishedMetalMaterial(Vec3.blue, 0.0));
+		Shape glassGlobe7 = new Globe(new Vec3(0.7, -0.6, -3.5), 0.4, new PolishedMetalMaterial(Vec3.reflection, 0.0));
+		Shape glass = new Globe(new Vec3(0.5, 0.0, -2.5), 0.5, new GlassMaterial(1.0));
+		Shape glass2 = new Globe(new Vec3(-0.5, 0.0, -2.5), 0.5, new GlassMaterial(1.0));
 		//
-		Shape glassGlobe = new Globe(new Vec3(-0.9, -0.1, -2.3), 0.4, new GlassMaterial(2.0));
-		Shape glass = new Globe(new Vec3(0.3, 0.0, -2.5), 0.35, new GlassMaterial(1.0));
-		//
-		Shape yellowGlobe = new Globe(new Vec3(0.0, 0.0, 0.4), 1.1, new DiffuseMaterial(new Vec3(1, 1, 0)));
-		//
-		Shape glassGlobeCenter = new Globe(new Vec3(1.4, 0.7, -3.5), 0.5, new PolishedMetalMaterial(Vec3.gray, 0.0));
-		Shape glassGlobeCenter2 = new Globe(new Vec3(-1.4, 0.7, -5.0), 0.8,
-				new PolishedMetalMaterial(new Vec3(Random.random(), Random.random(), Random.random()), 0.0));
-		//
-		Shape polishedGlobe = new Globe(new Vec3(0.5, -0.8, -2.5), 0.2, new PolishedMetalMaterial(Vec3.white, 1.5));
+		Shape polishedGlobeLeft = new Globe(new Vec3(-1.5, -0.8, -3.5), 0.2,
+				new PolishedMetalMaterial(Vec3.gray, 0.05));
+		Shape polishedGlobeRight = new Globe(new Vec3(1.5, -0.8, -3.5), 0.2,
+				new PolishedMetalMaterial(Vec3.reflection, 0.05));
 		//
 		ArrayList<Shape> shapes = new ArrayList<>();
 		//
@@ -156,16 +153,27 @@ public class Main {
 		//
 		shapes.add(background);
 		//
-		shapes.add(blueGlobe);
-		shapes.add(greenGlobe);
-		shapes.add(yellowGlobe);
-		//
 		shapes.add(glassGlobe);
+		shapes.add(glassGlobe2);
+		shapes.add(glassGlobe3);
+		shapes.add(glassGlobe4);
+		shapes.add(glassGlobe5);
+		shapes.add(glassGlobe6);
+		shapes.add(glassGlobe7);
 		shapes.add(glass);
-		shapes.add(glassGlobeCenter);
-		shapes.add(glassGlobeCenter2);
+		shapes.add(glass2);
 		//
-		shapes.add(polishedGlobe);
+		shapes.add(polishedGlobeLeft);
+		shapes.add(polishedGlobeRight);
+		//
+		int globes = 20;
+		for (int i = -20; i < globes; i++) {
+			for (int j = 0; j < globes; j++) {
+				Shape manyGlobes = new Globe(new Vec3(i, Random.random() * 45, j * (-3.5)), 0.36,
+						new DiffuseMaterial(new Vec3(Random.random(), Random.random(), Random.random())));
+				shapes.add(manyGlobes);
+			}
+		}
 		//
 		Group group = new Group(shapes);
 		raytrace2(obscura, group, 10);

@@ -33,8 +33,8 @@ public class PolishedMetalMaterial implements Material {
 		Vec3 rr = Vec3.subtract(r.getDirection(),
 				Vec3.multiply(2 * Vec3.dotProduct(h.getNormalVector(), r.getDirection()), h.getNormalVector()));
 		if (scatter_factor != 0) {
-			Vec3 random = new Vec3(Random.random(), Random.random(), Random.random());
-			rr = Vec3.add(rr, random);
+			Vec3 random = new Vec3(Random.random() * 2 - 1, Random.random() * 2 - 1, Random.random() * 2 - 1);
+			rr = Vec3.add(rr, Vec3.multiply(scatter_factor, random));
 		}
 		return new Ray(h.getPositionHit(), rr, 0.00001, Double.POSITIVE_INFINITY);
 	}
