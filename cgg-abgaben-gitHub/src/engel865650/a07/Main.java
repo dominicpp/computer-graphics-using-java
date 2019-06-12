@@ -24,11 +24,11 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		// a06_mirrors_glass_1();
-		a06_mirrors_glass_2();
+		a07_01();
+		a07_02();
 	}
 
-	public static void a06_mirrors_glass_1() {
+	public static void a07_01() {
 		image = new Image(width, height);
 		obscura = new CObscura(Math.PI / 3, image.getWidth(), image.getHeight(), new Vec3(-46.0, 215, 0),
 				Mat4.translate(-5, 16, -8));
@@ -106,7 +106,7 @@ public class Main {
 		return image;
 	}
 
-	public static void a06_mirrors_glass_2() {
+	public static void a07_02() {
 		image = new Image(width, height);
 		obscura = new CObscura(Math.PI / 3, image.getWidth(), image.getHeight(), new Vec3(25.0, -20, 0),
 				Mat4.translate(-2.5, -0.8, 11));
