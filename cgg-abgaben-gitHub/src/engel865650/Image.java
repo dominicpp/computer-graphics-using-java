@@ -40,6 +40,11 @@ public class Image {
 		pixels[3 * (x + (y * width)) + 2] = Math.pow(color.z, 1 / gamma); // z is B(lue)
 	}
 
+	public Vec3 getPixel(int x, int y) {
+		return new Vec3(pixels[3 * (x + (y * width)) + 0], pixels[3 * (x + (y * width)) + 1],
+				pixels[3 * (x + (y * width)) + 2]);
+	}
+
 	public void write(String filename) throws IOException {
 		// call image
 		ImageWriter.write(filename, pixels, width, height);
