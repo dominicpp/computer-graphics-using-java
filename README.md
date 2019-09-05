@@ -5,10 +5,17 @@ In the fifth semester of my bachelor studies at the Beuth University of Applied 
 <br/><br/>
 Down below you will see my own implementation of a ray tracer in Java as part of my bachelor studies.
 <br/><br/>
-The course focused on the core of computer graphics. Such as:
+The course focused on the core of computer graphics, such as:
 <ul>
+    <li>Raster graphics image</li>
+    <li>Gamma correction and antialiasing</li>
+    <li>Raytracing</li>
+    <li>Reflection</li>
+    <li>Glass and metal</li>
+    <li>Transformations</li>
+    <li>Scenegraph</li>
+    <li>Threads</li>
     <li>Textures</li>
-    <li>RayTrayer</li>
 </ul>
 <br/><br/>
 <p align="center">
