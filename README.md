@@ -11,6 +11,7 @@ The course focused on the core of computer graphics, such as:
     <li>Gamma correction and antialiasing</li>
     <li>Raytracing</li>
     <li>Reflection</li>
+    <li>Shapes like cylinders and spheres</li>
     <li>Glass and metal</li>
     <li>Transformations</li>
     <li>Scenegraph</li>
