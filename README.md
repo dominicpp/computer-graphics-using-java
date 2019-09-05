@@ -1,6 +1,8 @@
 # Computer-Graphics
 Computer graphics in Java.. w/o using any graphic libraries at all.
 
+In the fifth semester of my bachelor studies at the Beuth University of Applied Sciences classmates and I developed a game with Unity Engine and C# called Battle Arena. For this project we had 11 weeks for the developing. It was also our very first time to work with the Unity Engine and C#.
+<br/><br/>
 <p align="center">
     <img src="./doc/a01-checkered-background.png"  width="49%" height="49%">
     <img src="./doc/a01-square.png"  width="49%" height="49%">
