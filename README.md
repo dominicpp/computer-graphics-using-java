@@ -3,6 +3,8 @@ Computer graphics in Java.. w/o using any graphic libraries at all.
 
 In the fifth semester of my bachelor studies at the Beuth University of Applied Sciences I came in contact with computer graphics for the very first time.
 <br/><br/>
+Down below you will see my own implementation of a ray tracer in Java as part of my bachelor studies.
+<br/><br/>
 <p align="center">
     <img src="./doc/a01-checkered-background.png"  width="49%" height="49%">
     <img src="./doc/a01-square.png"  width="49%" height="49%">
