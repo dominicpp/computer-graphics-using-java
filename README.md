@@ -5,6 +5,12 @@ In the fifth semester of my bachelor studies at the Beuth University of Applied 
 <br/><br/>
 Down below you will see my own implementation of a ray tracer in Java as part of my bachelor studies.
 <br/><br/>
+The course focused on the core of computer graphics. Such as:
+<ul>
+    <li>Textures</li>
+    <li>RayTrayer</li>
+</ul>
+<br/><br/>
 <p align="center">
     <img src="./doc/a01-checkered-background.png"  width="49%" height="49%">
     <img src="./doc/a01-square.png"  width="49%" height="49%">
