@@ -7,7 +7,7 @@ Down below you will see my own implementation of a ray tracer in Java as part of
 <br/><br/>
 The course focused on the core of computer graphics, such as:
 <ul>
-    <li>Raster graphics image</li>
+    <li>Raster graphics</li>
     <li>Gamma correction and antialiasing</li>
     <li>Raytracing</li>
     <li>Reflection</li>
