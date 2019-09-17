@@ -1,5 +1,5 @@
 # Computer-Graphics
-Computer graphics in Java.. w/o using any graphic libraries at all.
+Computer graphics in Java - w/o using any graphic libraries at all.
 
 In the fifth semester of my bachelor studies at the Beuth University of Applied Sciences I came in contact with computer graphics for the very first time.
 <br/><br/>
